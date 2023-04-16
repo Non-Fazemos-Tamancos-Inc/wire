@@ -10,30 +10,23 @@ The most common use of mockups in software development is to create user interfa
 
 Foremost plan and layout for the final project frontend, backend and database
 
-1.  Requirements: The requirements are given in the assignment, but you have to add any new requirements needed by your particular store implementation.
-The system must have 2 types of users: Clients and Administrators
+1.  Functional and Non-Functional Requirements:
+   
+| Functionality | Description |
+|--|--|
+| User Types | The system must have 2 types of users: Clients and Administrators |
+| Administrators | Responsible for managing users and products objects. The application has a default administrator username and password. |
+| Customers |Customers are clients who access the system to buy/trade NFTs.|
+| User Attributes | Includes, at least: name, id, address, phone, email. |
+| Client Attributes | Incrementing on the default user attrbiutes, must also have: a wallet record relative to the user, document number |
+| Product Attributes |Include, at least: name, id, image, description, price, quantity (in stock), quantity sold. Individual NFTs also must have: codified token, position on its origin blockchain.|
+| Selling/Buying Products | Products are selected, their quantity chosen, and are included in a cart. Products are purchased using a digital wallet number (any valid number is accepted by the system). The quantity of products sold is subtracted from the quantity in stock and added to the quantity sold. Carts are emptied only on payment or by customers. |
+| Trading Products: |  |
+| Store Management: |  Administrators can create/update/read/delete (crud) new products and services. For example, they can change the stock quantity. |
+| Your functionality:  | Create a functionality that is specific to your application. It does not have to be something complicated. For instance, if you are selling cars, you may allow users to use an accelerator to hear how each car engine roars up and down. |
+| Non-functional requirements | Provide accessibility requirements and provide good usability. Be responsive, meaning that it should complete assigned tasks within a reasonable time. |
     
-Administrators are responsible for registering/managing administrators, customers, and products/services provided. The application already comes with an account admin with password admin.
-
-Customers are users who access the system to buy products/services.
-
-The admin record includes, at least: name, id, phone, email.
-
-Each customer's record includes, at least: name, id, address, phone, email
-
-Product/services records include, at least: name, id, photo, description, price, quantity (in stock), quantity sold.
-
-Your store may sell products, services or both (you decide)
-
-Selling Products (or services): Products are selected, their quantity chosen, and are included in a cart. Products are purchased using a credit card number (any number is accepted by the system). The quantity of product sold is subtracted from the quantity in stock and added to the quantity sold. Carts are emptied only on payment or by customers.
-
-Product/Service Management: Administrators can create/update/read/delete (crud) new products and services. For example, they can change the stock quantity.
-
-Your functionality: Create a functionality that is specific to your application. It does not have to be something complicated. For instance, if you are selling cars, you may allow users to use an accelerator to hear how each car engine roars up and down.
-
-The system must provide accessibility requirements and provide good usability. The system must be responsive, meaning that it should complete assigned tasks within a reasonable time.
-    
-2.  Project Description: Describe how your project implements the functionality in the requirements. Diagrams can help a lot here.
+2.  Project Description and Implementation: Describe how your project implements the functionality in the requirements. Diagrams can help a lot here.
 
 Do not forget to include in the Project Description:
 
@@ -45,7 +38,7 @@ Do not forget to include in the Project Description:
     
 3.  Comments About the Code: Any comment you may want to add to help understand your code. This is good programming practice.
     
-4.  Test Plan: Text describing the tests that will be performed. If an automatic test tool/framework is used (ex: [Selenium](https://www.selenium.dev/), [JUnit](https://junit.org/junit5/), [Spock](http://spockframework.org/)), the code for the tests can be used.
+4.  Test Plan: Text describing the tests that will be performed. If an automatic test tool/framework is used [Unittest library for Python](https://docs.python.org/3/library/unittest.html)
     
 5.  Test Results: Text describing the test results. If an automatic test tool/framework is used, its output can be used.
     
