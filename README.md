@@ -26,21 +26,16 @@ The most common use of mockups in software development is to create user interfa
 | Non-functional requirements | Provide accessibility requirements and provide good usability. Be responsive, meaning that it should complete assigned tasks within a reasonable time. |
     
 ### Project Description and Implementation: 
-Describe how your project implements the functionality in the requirements. Diagrams can help a lot here.
+The platform will follow a SPA layout (Single Page Application), allowing a user to navigate between his Profile tab, the Store Tab, as well as his Digital Wallet tab. The SPA will be connected in the future to a Backend Application, hosted on a server running a Node.js container. The Node.js application will eventually connect to and manage a NoSQL database, specifically MongoDB, in which the user's information, as well as the store's records (NFTs, transactions, user wallets, available blockchains, and all respective attributes) will be stored. The mockup platform wire will be developed using a simple HTML + CSS project, and eventually will be migrated to a React.js project for the SPA view.
 
-Do not forget to include in the Project Description:
-
--   The functionalities you are going to implement.
-    
--   A navigation diagram for your application linked to the screen mockups. This link can be just the name of the mockup (i.e. Mockup1, Mockup2, etc) or an HTML link.
-    
--   The information you are going to save in the server (no need to decide how that information will be saved).
+For the first Demo, the website will feature a top-level header for easy navigation between separate views. All users will have a Profile tab, which will be initially a simple login page. The store tab will feature available NFTs to be bought, as well as allow the user to view the different blockchains graphs hosting the different NFTs. The Digital Wallet tab will allow the user to register a payment method (credit card or other), as well as  sell any owned NFTs and view his or hers current balance. Through the Profile tab, the user may message other users to start a trade agreement between the two parties.
+The admin tabs will have special options to remove NFTs from the store, as well as manage customer trades and customer profiles, but not affect the blockchain directly, which once changed will keep all changes.
     
 ### Comments About the Code: 
 Any comment you may want to add to help understand your code. This is good programming practice.
     
 ### Test Plan: 
-Text describing the tests that will be performed. If an automatic test tool/framework is used [Unittest library for Python](https://docs.python.org/3/library/unittest.html)
+The tests will be performed using an automatic framework, specifically the [Unittest library for Python](https://docs.python.org/3/library/unittest.html). All tests can be found within the `tests/` directory under the relative 
     
 ### Test Results: Text describing the test results. If an automatic test tool/framework is used, its output can be used.
     
