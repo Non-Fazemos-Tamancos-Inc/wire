@@ -19,18 +19,15 @@ export class Router {
 
         window.addEventListener("popstate", this.refresh.bind(this));
         document.addEventListener("click", (event) => {
-            console.log(event.target.href);
             const { target } = event;
             if (
-                target.tagName.toLowerCase() === "a" &&
-                target.getAttribute("href").startsWith("/")
+                target.tagName.toLowerCase() === "a"
             ) {
                 event.preventDefault();
                 const path = target.getAttribute("href");
                 this.navigate(path);
             }
         });
-        this.refresh();
     }
 
     navigate(path) {

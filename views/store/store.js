@@ -2,9 +2,6 @@ class NFTStore extends HTMLElement {
     constructor() {
         super();
 
-        // Create a shadow root
-        const shadow = this.attachShadow({ mode: 'open' });
-
         // Load the card template
         const cardTemplatePromise = fetch('card.html').then((response) => response.text());
 
@@ -33,9 +30,8 @@ class NFTStore extends HTMLElement {
             }
         ];
 
-        const featuredCardsContainer = document.createElement('div');
-        featuredCardsContainer.setAttribute('id', 'featured-cards');
-        shadow.appendChild(featuredCardsContainer);
+        this.featuredCardsContainer = document.createElement('div');
+        this.featuredCardsContainer.setAttribute('id', 'featured-cards');
 
         cardTemplatePromise.then((cardTemplate) => {
             featuredData.forEach((cardData) => {
@@ -48,7 +44,7 @@ class NFTStore extends HTMLElement {
                 const card = document.createElement('div');
                 card.classList.add('card');
                 card.innerHTML = cardHTML;
-                featuredCardsContainer.appendChild(card);
+                this.featuredCardsContainer.appendChild(card);
             });
         });
 
@@ -74,9 +70,8 @@ class NFTStore extends HTMLElement {
                 description: 'Mauris vitae dapibus lorem. Sed malesuada sapien vel lorem cursus, quis vestibulum nibh finibus. A'
             }];
 
-        const trendingCardsContainer = document.createElement('div');
-        trendingCardsContainer.setAttribute('id', 'trending-cards');
-        shadow.appendChild(trendingCardsContainer);
+        this.trendingCardsContainer = document.createElement('div');
+        this.trendingCardsContainer.setAttribute('id', 'trending-cards');
 
         cardTemplatePromise.then((cardTemplate) => {
             trendingData.forEach((cardData) => {
@@ -89,7 +84,7 @@ class NFTStore extends HTMLElement {
                 const card = document.createElement('div');
                 card.classList.add('card');
                 card.innerHTML = cardHTML;
-                trendingCardsContainer.appendChild(card);
+                this.trendingCardsContainer.appendChild(card);
             });
         });
 
@@ -116,12 +111,19 @@ class NFTStore extends HTMLElement {
 
         graphTemplatePromise.then((graphTemplate) => {
             const graphHTML = graphTemplate.replace('{{data}}', JSON.stringify(graphData));
-            const graph = document.createElement('div');
-            graph.classList.add('graph');
-            graph.innerHTML = graphHTML;
-            shadow.appendChild(graph);
+            this.graph = document.createElement('div');
+            this.graph.classList.add('graph');
+            this.graph.innerHTML = graphHTML;
         });
+    }
+
+    connectedCallback() {
+        fetch('views/store/store.html')
+            .then(response => response.text())
+            .then(html => {
+                this.innerHTML = html.trim();
+            });
     }
 }
 
-customElements.define('nft-store', NFTStore);
+customElements.define('store-app', NFTStore);
