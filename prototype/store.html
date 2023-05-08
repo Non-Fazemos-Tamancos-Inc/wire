@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home - NFTshop</title>
+    <meta name="description" content="" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Chivo:wght@300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
+    />
+    <link rel="stylesheet" href="footer.css" />
+    <link rel="stylesheet" href="header.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="store.css" />
+  </head>
+  <body>
+    <header>
+      <a href="#" class="logo"
+        ><img src="./assets/img/LogotipoNFT.png" alt="logo nft aqui" srcset=""
+      /></a>
+      <ul class="navmenu">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./store.html">Store</a></li>
+        <!--        <li><a href="./cart.html">About Us</a></li>-->
+        <li><a href="./login.html">Login</a></li>
+      </ul>
+      <div class="nav-icon">
+        <a href="./profile.html"><i class="bx bx-user"></i></a>
+        <a href="./cart.html"><i class="bx bx-cart"> 0</i></a>
+      </div>
+    </header>
+    <div id="app-container">
+      <section class="store-section">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <h2>Market Price Trend</h2>
+              <div id="market-price-graphs">
+                <canvas id="price-trend-chart"></canvas>
+                <script>
+                  const ctx = document
+                    .getElementById("price-trend-chart")
+                    .getContext("2d");
+                  const chart = new Chart(ctx, {
+                    type: "line",
+                    data: {
+                      labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+                      datasets: [
+                        {
+                          label: "Average price (USD)",
+                          data: [20, 25, 30, 27, 35, 40],
+                          borderColor: "#3e95cd",
+                          fill: false,
+                        },
+                      ],
+                    },
+                    options: {
+                      title: {
+                        display: true,
+                        text: "Average NFT Price Trend (2023)",
+                      },
+                      legend: {
+                        display: false,
+                      },
+                    },
+                  });
+                </script>
+              </div>
+            </div>
+            <div class="col nft-sales">
+              <h2>NFTs for Sale</h2>
+              <ul class="row nft-list">
+                <li class="col nft-item">
+                  <img src="./assets/nft/shoe.jpg" alt="NFT 1" />
+                  <h3>THE Shoe</h3>
+                  <p>Price: $50</p>
+                  <button class="button-nft">BUY NOW</button>
+                </li>
+                <li class="col nft-item">
+                  <img src="./assets/nft/greek.jpg" alt="NFT 2" />
+                  <h3>Le Greek</h3>
+                  <p>Price: $75</p>
+                  <button class="button-nft">BUY NOW</button>
+                </li>
+                <li class="col nft-item">
+                  <img src="./assets/nft/painting.jpg" alt="NFT 3" />
+                  <h3>Mono Lisa</h3>
+                  <p>Price: $100</p>
+                  <button class="button-nft">BUY NOW</button>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <h2>Orders Sent</h2>
+              <p>No orders have been sent yet.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <h3>Contact Us</h3>
+            <ul>
+              <li>Av. Trabalhador São Carlense 400</li>
+              <li>São Carlos - SP, BR</li>
+              <li>Phone: 9900-8008</li>
+              <li>Email: grad@icmc.usp.br</li>
+            </ul>
+          </div>
+          <div class="col">
+            <h3>Follow Us</h3>
+            <ul>
+              <li><a href="#">Facebook</a></li>
+              <li><a href="#">Twitter</a></li>
+              <li><a href="#">Instagram</a></li>
+            </ul>
+          </div>
+          <div class="col">
+            <h3>Subscribe</h3>
+            <form>
+              <input type="email" placeholder="Enter your email address" />
+              <button type="submit">Subscribe</button>
+            </form>
+            <p>&copy; 2023 NFT Store. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
