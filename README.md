@@ -18,8 +18,6 @@ The core entities which are expected to be persisted on the server are: the user
 
 We also have a more complete mockup avaiable on [Figma](https://www.figma.com/file/73WsNtBC5B4Ta5ADKSdRO3/Non-Fazemos-Tamancos?type=design&node-id=0%3A1&t=tQDfAzRGjMiVa548-1).
 
-<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Ffile%2F73WsNtBC5B4Ta5ADKSdRO3%2FNon-Fazemos-Tamancos%3Ftype%3Ddesign%26node-id%3D0%253A1%26t%3DtQDfAzRGjMiVa548-1" allowfullscreen></iframe>
-
 And, as we haven't made use of Figma's prototype feature, we also made a navigation diagram:
 
 ![Navigation Diagram](./docs/assets/navigation-diagram.png)
