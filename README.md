@@ -49,7 +49,7 @@ The results are within the expected. All the navigation parts work ok, although 
 
 ### Build Procedure
 
-For this delivery, there isn't much into building the application, you can just open the HTML files inside the `prototype/` directory and it should work fine.
+For this delivery, there isn't much into building the application, you can just open the HTML files inside the `prototype/` directory and it should work fine. (The initial homepage is the `prototype/index.html` file.)
 
 ### Problems
 
